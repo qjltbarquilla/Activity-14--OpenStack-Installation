@@ -1,0 +1,6 @@
+---
+
+- name: Install Glance on server
+  apt:
+    name: glance
+    state: present

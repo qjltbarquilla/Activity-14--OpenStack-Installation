@@ -1,0 +1,19 @@
+---
+
+- name: Install zypper
+  apt:
+    name: zypper
+    state: present
+
+- name: Add OpenStack Ussuri repository
+  command: >
+    sudo zypper addrepo -f obs://Cloud:OpenStack:Ussuri/openSUSE_Leap_15.1 Ussuri
+
+- name: Install Openstack Python client
+  command: >
+    sudo apt install python3-openstackclient
+
+- name: Install Keystone on server
+  apt:
+    name: keystone
+    state: present

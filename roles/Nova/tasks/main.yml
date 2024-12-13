@@ -1,0 +1,7 @@
+---
+
+- name: Install Nova compute
+  apt:
+    name: nova-compute
+    state: present
+

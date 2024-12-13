@@ -1,0 +1,25 @@
+---
+
+- hosts: server
+  become: true
+  pre_tasks:
+
+  - name: Install Updates (Ubuntu)
+    apt:
+      upgrade: dist
+      update_cache: yes
+
+- hosts: server
+  become: true
+  roles:
+    - Keystone
+
+- hosts: server
+  become: true
+  roles:
+    - Glance
+
+- hosts: server
+  become: true
+  roles:
+    - Nova
